@@ -2,8 +2,8 @@ import React from 'react'
 import API from '../../utils/API'
 
 // Import components
-import NavBar from './components/Form'
-import NavBar from './components/Results'
+import Form from './components/Form'
+import Results from './components/Results'
 
 class Search extends React.Component {
   state = {
@@ -49,7 +49,7 @@ class Search extends React.Component {
         <Form
           search={this.state.search}
           handleInputChange={this.handleInputChange}
-          handleFormSubmit={this.handleInputChange}
+          handleFormSubmit={this.handleFormSubmit}
         />
         <div className='container'>
           <h2>Results</h2>
