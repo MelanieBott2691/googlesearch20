@@ -1,8 +1,9 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import Jumbotron from "../Jumbotron"
 import './style.css'
 
-function NavBar () {
+function Nav () {
   return (
     <nav className='navbar navbar-expand-lg text-light'>
       <div className='container'>
@@ -37,6 +38,8 @@ function NavBar () {
         </ul>
       </div>
     </nav>
+
+    <Jumbotron/>
   )
 }
-export default NavBar
+export default Nav
