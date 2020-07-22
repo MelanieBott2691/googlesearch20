@@ -3,9 +3,15 @@ import './style.css'
 function Jumbotron () {
   return (
     <div className='jumbotron text-center'>
-      <div className='container text-light'>
-        <h1>Google Book Search</h1>
-      </div>
+      <h1>Google Book Search</h1>
+      <a
+        target='_blank'
+        rel='noopener noreferrer'
+        href='http://www.googlebooks.com/api/'
+      >
+        {/* <div className='container text-light'> */}
+        Powered By Google Books
+      </a>
     </div>
   )
 }
