@@ -7,25 +7,25 @@ export function BookList ({ children }) {
   return <ul className='list-group'>{children}</ul>
 }
 
-// RecipeListItem renders a bootstrap list item containing data from the recipe api call
-export class BookListItem extends React.Component {
-  render () {
-    console.log(this.props)
+// BookListItem renders a bootstrap list item containing data from the book api call
+export function BookListItem ({
+  thumbnail = "https://placehold.it/300x300",
+  title,
+  description,
+  href,
+  handleSave
+}) {
     return (
-      <li>
+      <li className="list-group-item">
         <Container>
           <Row>
             <Col size='xs-4 sm-2'>
-              <Thumbnail src={this.props.thumbnail} />
+              <Thumbnail src={thumbnail} />
             </Col>
             <Col size='xs-8 sm-9'>
-              <h3>
-                {this.props.title}
-                <span>
-                  <h5>{this.props.authors.join(', ')}</h5>
-                </span>
+              <h3 className="title">{title}
               </h3>
-              <p>{this.props.synopsis}</p>
+              <p className="synopsys">Description: {description}</p>
               <a
                 target='_blank'
                 href={this.props.link}
