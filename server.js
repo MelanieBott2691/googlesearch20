@@ -1,3 +1,10 @@
+// import React, { Router } from 'react'
+// import Jumbotron from '../components/Jumbotron'
+// import API from '../utils/API'
+// import { BookList, BookListItem } from '../components/BookList'
+// import { Container, Row, Col } from '../components/Grid'
+// import Search from '../components/Search/Search'
+
 const express = require('express')
 const mongoose = require('mongoose')
 const path = require('path')
@@ -7,6 +14,10 @@ const app = express()
 
 const routes = require('./routes')
 
+app.use(express.static(path.join(__dirname, 'build')))
+app.get('/', function (req, res) {
+  res.sendFile(path.join(__dirname, 'build', 'index.html'))
+})
 app.use(express.urlencoded({ extended: true }))
 app.use(express.json())
 
@@ -19,9 +30,14 @@ app.use(routes)
 
 // Send every request to the React app
 // Define any API routes before this runs
-app.get('*', function (req, res) {
-  res.sendFile(path.join(__dirname, './client/build/index.html'))
-})
+// app.get('*', function (req, res) {
+//   Router.run(routes, req.path, function (Handler, state) {
+//     const element = React.createElement(Handler)
+//     const html = React.renderToString(element)
+//     res.render('main', { content: html })
+// res.sendFile(path.join(__dirname, './client/build/index.html'))
+// })
+// })
 
 mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/googlesearch')
 // { useNewUrlParser: true }
