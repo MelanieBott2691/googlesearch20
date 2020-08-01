@@ -32,16 +32,19 @@ import Search from '../components/Search/Search'
 
 class Saved extends Component {
   state = {
-    book: [],
-    bookSearch: ''
+    book: []
   }
 
   componentDidMount () {
-    API.getSaved()
-      .then(res => {
-        console.log(res.data)
-        this.setState({ recipes: res.data })
-      })
+    this.getSavedBooks()
+  }
+  getSavedBooks = () => {
+    API.getSavedBooks()
+      .then(res =>
+        this.setState({
+          books: res.data
+        })
+      )
       .catch(err => console.log(err))
   }
 
