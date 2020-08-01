@@ -3,7 +3,7 @@ import { BookList, BookListItem } from '../components/BookList/BookList';
 import { Container, Row, Col } from '../components/Grid/Grid';
 import API from '../utils/API';
 
-class Save extends Component {
+class Saved extends Component {
   state = {
     savedBooks: []
   };
@@ -53,4 +53,4 @@ class Save extends Component {
   }
 }
 
-export default Save;
+export default Saved;
