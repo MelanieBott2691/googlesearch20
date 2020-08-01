@@ -5,7 +5,7 @@ import { BookList, BookListItem } from '../components/BookList'
 import { Container, Row, Col } from '../components/Grid'
 import Search from '../components/Search/Search'
 
-class Book extends Component {
+class Books extends Component {
   state = {
     book: [],
     bookSearch: ''
@@ -23,7 +23,7 @@ class Book extends Component {
     API.getBooks(this.state.bookSearch)
       .then(res => this.setState({ book: res.data }))
       .catch(err => console.log(err))
-    console.log(this.state.book)
+    console.log(this.state.books)
   }
 
   handleSave = ({ target }) => {
@@ -53,18 +53,18 @@ class Book extends Component {
           </Row>
           <Row>
             <Col size='xs-12'>
-              {!this.state.book.length ? (
+              {!this.state.books.length ? (
                 <h1 className='text-center'>No Books to Display</h1>
               ) : (
                 <BookList>
-                  {this.state.book.map(recipe => {
+                  {this.state.books.map(recipe => {
                     return (
                       <BookListItem
-                        key={book.id}
-                        title={book.volumeInfo.title}
-                        href={book.volumeInfo.infoLink}
-                        ingredients={book.volumeInfo.description}
-                        thumbnail={book.volumeInfo.imageLinks.smallThumbnail}
+                        key={recipe.id}
+                        title={recipe.volumeInfo.title}
+                        href={recipe.volumeInfo.infoLink}
+                        ingredients={recipe.volumeInfo.description}
+                        thumbnail={recipe.volumeInfo.imageLinks.smallThumbnail}
                         handleSave={this.handleSave}
                       />
                     )
@@ -79,4 +79,4 @@ class Book extends Component {
   }
 }
 
-export default Book
+export default Books

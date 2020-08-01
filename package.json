@@ -1,6 +1,8 @@
 {
   "name": "googlesearch20",
   "version": "0.1.0",
+  "description": "Google Books Search",
+  "main": "server.js",
   "engines": {
     "node": "14.x"
   },
@@ -12,6 +14,7 @@
     "axios": "^0.19.2",
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
+    "if-env": "^1.0.4",
     "mongoose": "^5.9.25",
     "node": "^14.5.0",
     "nodemon": "^2.0.4",
@@ -21,8 +24,12 @@
     "react-scripts": "3.4.1"
   },
   "scripts": {
-    "start": "node server.js",
-    "build": "react-scripts build && cp build/index.html public/index.html",
+    "start": "if-env NODE_ENV=production && npm run start:prod || npm run start:dev",
+    "start:prod": "node server.js",
+    "client": "cd client && npm run start",
+    "install": "cd client && npm install",
+    "build": "cd client && npm run build",
+    "heroku-postbuild": "npm run build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
   },
@@ -41,8 +48,6 @@
       "last 1 safari version"
     ]
   },
-  "description": "# Google Books Search ![]()",
-  "main": "server.js",
   "devDependencies": {},
   "repository": {
     "type": "git",
