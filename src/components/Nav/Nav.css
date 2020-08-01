@@ -2,7 +2,9 @@ nav.navbar {
     margin-bottom: 0;
   }
   
-  .brand {
+  .navbar-brand a {
     font-size: x-large;
     font-weight: bolder;
+    color: rgb(71, 112, 10);
+
   }
