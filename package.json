@@ -42,12 +42,7 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/MelanieBott2691/googlesearch20.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/MelanieBott2691/googlesearch20/issues"
-  },
-  "homepage": "https://github.com/MelanieBott2691/googlesearch20#readme"
+    "url": "https://github.com/MelanieBott2691/googlesearch20.git"
+  
+}
 }
