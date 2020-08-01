@@ -18,16 +18,45 @@ class Books extends Component {
       .get('https://www.googleapis.com/books/v1/volumes')
       .query({ q: this.state.searchField })
       .then(data => {
-        console.log(data)
+        // console.log(data)
+        this.setState({ books: [...data.body.items] })
       })
   }
-  handleSearch = e => {
-    // console.log(e.target.value)
-    this.setState({ searchField: e.target.value })
-  }
+  handleSubmit = e => {
+  e.preventDefault()
+  request
+    .get('https://www.googleapis.com/books/v1/volumes')
+    .query({ q: this.state.searchField })
+    .then(data => {
+      console.log(data)
+      this.setState({ books: [...data.body.items] })
+    })
+}
+
+// handleChange = e => {
+//   this.setState({ searchField: e.target.value })
+// }
+
+handleSearch = e => {
+  // console.log(e.target.value)
+  this.setState({ searchField: e.target.value })
+}
+
+handleSort = e => {
+  this.setState({ sort: e.target.value })
+}
+
 
   render () {
-    return (
+      const filterBooks
+ = this.state.books.sort((a,b) => {
+     if(this.state.sort == "Newest") {
+         console.log("newest")
+         return parseInt(b.volumeInfo.publishedDate.substring(0,4)) - parseInt(a.volumeInfo.publishedDate.substring(0,4));
+     }
+
+
+ })    return (
       <div>
         <Search searchBook={this.searchBook} handleSearch={this.handleSearch} />
       </div>
