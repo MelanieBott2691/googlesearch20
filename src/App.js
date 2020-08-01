@@ -1,10 +1,11 @@
 import React, { Component } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Jumbotron from './components/Jumbotron/Jumbotron'
-import BookList from './components/BookList/BookList'
-import Search from './components/Search/Search'
-import Saved from './components/Save/Save'
-
+// import BookList from './components/BookList/BookList'
+import Search from './pages/Search'
+import Saved from './pages/Saved'
+import Nav from './components/Nav/Nav'
+// import NoMatch from './pages/NoMatch'
 import './App.css'
 
 class App extends Component {
@@ -12,6 +13,7 @@ class App extends Component {
     return (
       <Router>
         <div className='App'>
+          <Nav />
           <Jumbotron />
           <Switch>
             <Route exact path='/' component={Search} />
@@ -20,7 +22,7 @@ class App extends Component {
             {/* renders the Saved page when "/saved" route is hit */}
             <Route exact path='/saved' component={Saved} />
           </Switch>
-          <BookList />
+          {/* <BookList /> */}
         </div>
       </Router>
     )

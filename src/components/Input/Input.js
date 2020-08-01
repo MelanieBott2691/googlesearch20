@@ -1,9 +1,6 @@
 import React from 'react'
-import './style.css'
+import './Input.css'
 
-// This component lets us use a bootstrap input element without worrying about class names
-// or manually wrapping the input with a form-group div
-// All of the props passed to this component are spread onto the input element
 export function Input (props) {
   return (
     <div className='input-group input-group-lg'>

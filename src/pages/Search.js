@@ -1,8 +1,8 @@
 import React, { Component } from 'react'
 import API from '../utils/API'
-import { Container, Row, Col } from '../components/Grid'
-import { BookList, BookListItem } from '../components/List'
-import { Input, SearchButton } from '../components/Input'
+import { Container, Row, Col } from '../components/Grid/Grid'
+import { BookList, BookListItem } from '../components/BookList/BookList'
+import { Input, SearchButton } from '../components/Input/Input'
 
 class Search extends Component {
   // instatiate state for list of books retrieved from googlebooks api and bookSearch value
