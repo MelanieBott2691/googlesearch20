@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import Header from './Header'
 // import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
-// import Saved from './pages/Saved'
+import Books from '../src/components/Books/Books'
 // import Books from './pages/Books'
 // import Search from './pages/Search'
 // import Nav from './components/Nav'
@@ -15,6 +15,7 @@ class App extends Component {
     return (
       <div className='App'>
         <Header />
+        <Books />
       </div>
     )
   }
