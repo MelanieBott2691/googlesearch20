@@ -1,7 +1,7 @@
 import React from 'react';
 import Thumbnail from '../Thumbnail/Thumbnail';
 import { Container, Row, Col } from '../Grid/Grid';
-import SaveBtn from '../Save/Save';
+import SaveBtn from '../SaveModal/SaveModal';
 import API from '../../utils/API';
 import DeleteBtn from '../DeleteBtn/DeleteBtn';
 import './BookList.css';

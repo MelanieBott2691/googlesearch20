@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Jumbotron from './components/Jumbotron/Jumbotron';
-import Save from './components/Save/Save';
+import SaveModal from './components/SaveModal/SaveModal';
 import Search from './pages/Search';
 import Saved from './pages/Saved';
 import Nav from './components/Nav/Nav';
@@ -21,7 +21,7 @@ class App extends Component {
             <Route exact path="/search" component={Search} />
 
             <Route exact path="/saved" component={Saved} />
-            <Route exact path="/save" component={Save} />
+            <Route exact path="/savemodal" component={SaveModal} />
           </Switch>
         </div>
       </Router>
