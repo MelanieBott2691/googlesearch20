@@ -1,37 +1,37 @@
-import React, { Component } from 'react'
-import API from '../utils/API'
-import { Container, Row, Col } from '../components/Grid/Grid'
-import { BookList, BookListItem } from '../components/BookList/BookList'
+import React, { Component } from 'react';
+import API from '../utils/API';
+import { Container, Row, Col } from '../components/Grid/Grid';
+import { BookList, BookListItem } from '../components/BookList/BookList';
 
 class Save extends Component {
   state = {
     savedBooks: []
-  }
+  };
 
   // loads saved books when Saved page loads
-  componentDidMount () {
-    this.loadBooks()
+  componentDidMount() {
+    this.loadBooks();
   }
 
   // loads books from database
-  loadBooks = event => {
+  loadBooks = (event) => {
     API.getBooks()
-      .then(res => {
+      .then((res) => {
         this.setState({ savedBooks: res.data }, function () {
-          console.log(this.state.savedBooks)
-        })
+          console.log(this.state.savedBooks);
+        });
       })
-      .catch(err => console.log(err))
-  }
+      .catch((err) => console.log(err));
+  };
 
-  render () {
+  render() {
     return (
       <div>
         <Container>
           <Row>
-            <Col size='xs-12'>
+            <Col size="xs-12">
               <BookList>
-                {this.state.savedBooks.map(book => {
+                {this.state.savedBooks.map((book) => {
                   return (
                     <BookListItem
                       key={book._id}
@@ -42,16 +42,23 @@ class Save extends Component {
                       image={book.image}
                       id={book._id}
                       loadBooks={this.loadBooks}
+                      Button={() => (
+                        <button
+                          onClick={() => this.handleBookDelete(book._id)}
+                          className="btn btn-danger md-2">
+                          Delete
+                        </button>
+                      )}
                     />
-                  )
+                  );
                 })}
               </BookList>
             </Col>
           </Row>
         </Container>
       </div>
-    )
+    );
   }
 }
 
-export default Save
+export default Save;
