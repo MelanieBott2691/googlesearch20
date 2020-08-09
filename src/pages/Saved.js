@@ -10,11 +10,13 @@ class Save extends Component {
 
   // loads saved books when Saved page loads
   componentDidMount() {
-    this.loadBooks();
+    this.getBooks();
+    // this.loadBooks();
   }
 
   // loads books from database
-  loadBooks = (event) => {
+  // loadBooks = (event) => {
+  getBooks = () => {
     API.getBooks()
       .then((res) => {
         this.setState({ savedBooks: res.data }, function () {
@@ -24,6 +26,9 @@ class Save extends Component {
       .catch((err) => console.log(err));
   };
 
+  handleBookDelete = (id) => {
+    API.deleteBook(id).then((res) => this.getBooks());
+  };
   render() {
     return (
       <div>
