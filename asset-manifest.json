@@ -1,0 +1,19 @@
+{
+  "files": {
+    "main.css": "/googlesearch20/static/css/main.f14841ff.chunk.css",
+    "main.js": "/googlesearch20/static/js/main.69489955.chunk.js",
+    "runtime-main.js": "/googlesearch20/static/js/runtime-main.691aa077.js",
+    "static/js/2.528789de.chunk.js": "/googlesearch20/static/js/2.528789de.chunk.js",
+    "index.html": "/googlesearch20/index.html",
+    "precache-manifest.c5e125281297baa8705ebf02ad84a444.js": "/googlesearch20/precache-manifest.c5e125281297baa8705ebf02ad84a444.js",
+    "service-worker.js": "/googlesearch20/service-worker.js",
+    "static/js/2.528789de.chunk.js.LICENSE.txt": "/googlesearch20/static/js/2.528789de.chunk.js.LICENSE.txt",
+    "static/media/Jumbotron.css": "/googlesearch20/static/media/header.4c71462e.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.691aa077.js",
+    "static/js/2.528789de.chunk.js",
+    "static/css/main.f14841ff.chunk.css",
+    "static/js/main.69489955.chunk.js"
+  ]
+}
