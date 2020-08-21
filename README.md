@@ -24,5 +24,10 @@ User enters search criteria in the `Search` box.
 Search results are listed with the option to `view` or `save`.
 User can `save` results for viewing later.
 
-
-
+### Screen Shots
+#### Search Topic
+![](public/img/search.png)
+#### Search Results Page
+![](public/img/searchresults.png)
+#### Save Result
+![](public/img/save.png)

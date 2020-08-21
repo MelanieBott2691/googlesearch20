@@ -1,41 +1,40 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
 
-import { Modal, Button } from 'react-bootstrap'
+import { Modal, Button } from 'react-bootstrap';
 
-function Save ({ type = 'default', className, children, onClick }) {
-  const [show, setShow] = useState(false)
-  const handleClose = () => setShow(false)
-  const handleShow = () => setShow(true)
+function Save({ type = 'default', className, children, onClick }) {
+  const [show, setShow] = useState(false);
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
   const click = () => {
-    handleShow()
-    onClick()
-  }
+    handleShow();
+    onClick();
+  };
 
   return (
     <>
       <button
         onClick={click}
-        className={['btn btn-lg', `btn-${type}`, className].join(' ')}
-      >
+        className={['btn btn-lg', `btn-${type}`, className].join(' ')}>
         {children}
       </button>
 
       <Modal show={show} onHide={handleClose}>
         <Modal.Header closeButton>
-          <Modal.Title>You're book has been saved!</Modal.Title>
+          <Modal.Title>You Saved Your Book!</Modal.Title>
         </Modal.Header>
-        <Modal.Body>You can view your saved books in the Saved tab!</Modal.Body>
+        <Modal.Body>Come back to view your saved book at anytime!</Modal.Body>
         <Modal.Footer>
-          <Button variant='secondary' onClick={handleClose}>
-            Close
+          <Button variant="success" onClick={handleClose}>
+            Later!
           </Button>
-          <Button variant='primary' onClick={handleClose}>
-            OK
-          </Button>
+          {/* <Button variant='primary' onClick={handleClose}>
+            Done
+          </Button> */}
         </Modal.Footer>
       </Modal>
     </>
-  )
+  );
 }
 
-export default Save
+export default Save;
