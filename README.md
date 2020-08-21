@@ -20,6 +20,9 @@ The Google Books Search project was set up with Create React App. The react-base
   - Google Books API
 
 ### Instructions
+User enters search criteria in the `Search` box.
+Search results are listed with the option to `view` or `save`.
+User can `save` results for viewing later.
 
 
 
