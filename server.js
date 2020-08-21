@@ -22,11 +22,12 @@ app.use(routes);
 // app.get('*', function (req, res) {
 //   res.sendFile(path.join(__dirname, './client/build/index.html'))
 // })
-mongoose.connect('mongodb://locahost/googlesearch', {
+mongoose.connect('mongodb://locahost/googlesearch20', {
   useNewUrlParser: true
 });
+
 var MONGODB_URI =
-  process.env.MONGODB_URI || 'mongodb://localhost/mongoGoogleSearch';
+  process.env.MONGODB_URI || 'mongodb://localhost/googlesearch20';
 // mongoose.connect(
 //   process.env.MONGODB_URI || 'mongodb://localhost/googlesearch',
 //   {
