@@ -22,13 +22,18 @@ app.use(routes);
 // app.get('*', function (req, res) {
 //   res.sendFile(path.join(__dirname, './client/build/index.html'))
 // })
-
-mongoose.connect(
-  process.env.MONGODB_URI || 'mongodb://localhost/googlesearch',
-  {
-    useNewUrlParser: true
-  }
-);
+mongoose.connect('mongodb://locahost/googlesearch', {
+  useNewUrlParser: true
+});
+var MONGODB_URI =
+  process.env.MONGODB_URI || 'mongodb://localhost/mongoGoogleSearch';
+// mongoose.connect(
+//   process.env.MONGODB_URI || 'mongodb://localhost/googlesearch',
+//   {
+//     useNewUrlParser: true
+//   }
+// );
+mongoose.connect(MONGODB_URI);
 
 app.listen(PORT, () => {
   console.log(`App listening on PORT ${PORT}!`);
