@@ -8,8 +8,8 @@ The Google Books Search project was set up with Create React App. The react-base
 
 ### Deployment
 - ##### This App is deployed on:
- - GitHub Pages 
- - Heroku 
+ - GitHub Pages https://melaniebott2691.github.io/googlesearch20/
+ - Heroku https://google-search-20.herokuapp.com/
 
 ### Technologies Used
 - ##### MERN
